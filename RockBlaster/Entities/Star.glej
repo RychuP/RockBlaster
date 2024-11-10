@@ -1,0 +1,331 @@
+{
+  "Tags": [
+    "GLUE"
+  ],
+  "Source": "GLUE",
+  "CreatedByOtherEntities": true,
+  "Is2D": true,
+  "ReferencedFiles": [
+    {
+      "Name": "Entities/Star/white.png",
+      "IsSharedStatic": true,
+      "RuntimeType": "Microsoft.Xna.Framework.Graphics.Texture2D",
+      "ProjectsToExcludeFrom": []
+    },
+    {
+      "Name": "Entities/Star/pink.png",
+      "IsSharedStatic": true,
+      "RuntimeType": "Microsoft.Xna.Framework.Graphics.Texture2D",
+      "ProjectsToExcludeFrom": []
+    },
+    {
+      "Name": "Entities/Star/green.png",
+      "IsSharedStatic": true,
+      "RuntimeType": "Microsoft.Xna.Framework.Graphics.Texture2D",
+      "ProjectsToExcludeFrom": []
+    },
+    {
+      "Name": "Entities/Star/blue.png",
+      "IsSharedStatic": true,
+      "RuntimeType": "Microsoft.Xna.Framework.Graphics.Texture2D",
+      "ProjectsToExcludeFrom": []
+    },
+    {
+      "Name": "Entities/Star/largecross.png",
+      "IsSharedStatic": true,
+      "RuntimeType": "Microsoft.Xna.Framework.Graphics.Texture2D",
+      "ProjectsToExcludeFrom": []
+    },
+    {
+      "Name": "Entities/Star/smallcross.png",
+      "IsSharedStatic": true,
+      "RuntimeType": "Microsoft.Xna.Framework.Graphics.Texture2D",
+      "ProjectsToExcludeFrom": []
+    }
+  ],
+  "CustomVariables": [
+    {
+      "Properties": [
+        {
+          "Name": "Type",
+          "Value": "float",
+          "Type": "String"
+        }
+      ],
+      "Name": "X",
+      "SetByDerived": true
+    },
+    {
+      "Properties": [
+        {
+          "Name": "Type",
+          "Value": "float",
+          "Type": "String"
+        }
+      ],
+      "Name": "Y",
+      "SetByDerived": true
+    },
+    {
+      "Properties": [
+        {
+          "Name": "Type",
+          "Value": "float",
+          "Type": "String"
+        }
+      ],
+      "Name": "Z",
+      "SetByDerived": true
+    },
+    {
+      "Properties": [
+        {
+          "Name": "Type",
+          "Value": "float",
+          "Type": "String"
+        },
+        {
+          "Name": "Category",
+          "Value": "Size",
+          "Type": "String"
+        }
+      ],
+      "Name": "Scale",
+      "DefaultValue": 1.0,
+      "SetByDerived": true,
+      "SourceObject": "SpriteInstance",
+      "SourceObjectProperty": "TextureScale",
+      "Category": "Size"
+    },
+    {
+      "Properties": [
+        {
+          "Name": "Type",
+          "Value": "float",
+          "Type": "String"
+        },
+        {
+          "Name": "Category",
+          "Value": "Appearance",
+          "Type": "String"
+        }
+      ],
+      "Name": "Alpha",
+      "DefaultValue": 1.0,
+      "SetByDerived": true,
+      "SourceObject": "SpriteInstance",
+      "SourceObjectProperty": "Alpha",
+      "Category": "Appearance"
+    },
+    {
+      "Properties": [
+        {
+          "Name": "Type",
+          "Value": "Texture2D",
+          "Type": "String"
+        },
+        {
+          "Name": "Category",
+          "Value": "Texture",
+          "Type": "String"
+        }
+      ],
+      "Name": "SpriteInstanceTexture",
+      "DefaultValue": "white",
+      "SetByDerived": true,
+      "SourceObject": "SpriteInstance",
+      "SourceObjectProperty": "Texture",
+      "Category": "Texture"
+    }
+  ],
+  "NamedObjects": [
+    {
+      "InstanceName": "SpriteInstance",
+      "SourceClassType": "FlatRedBall.Sprite",
+      "Properties": [
+        {
+          "Name": "AssociateWithFactory",
+          "Value": true,
+          "Type": "bool"
+        }
+      ],
+      "InstructionSaves": [
+        {
+          "Type": "Texture2D",
+          "Member": "Texture",
+          "Value": "white",
+          "Time": 0.0
+        },
+        {
+          "Type": "float",
+          "Member": "TextureScale",
+          "Value": 1.0,
+          "Time": 0.0
+        }
+      ],
+      "SourceType": 2,
+      "SourceFile": "Sprite",
+      "AttachToContainer": true,
+      "GenerateTimedEmit": true
+    },
+    {
+      "InstanceName": "CircleInstance",
+      "SourceClassType": "FlatRedBall.Math.Geometry.Circle",
+      "Properties": [
+        {
+          "Name": "AssociateWithFactory",
+          "Value": true,
+          "Type": "bool"
+        }
+      ],
+      "InstructionSaves": [
+        {
+          "Type": "float",
+          "Member": "Radius",
+          "Value": 80.0,
+          "Time": 0.0
+        },
+        {
+          "Type": "bool",
+          "Member": "Visible",
+          "Value": false,
+          "Time": 0.0
+        }
+      ],
+      "SourceType": 2,
+      "SourceFile": "Circle",
+      "HasPublicProperty": true,
+      "AttachToContainer": true,
+      "GenerateTimedEmit": true
+    }
+  ],
+  "StateCategoryList": [
+    {
+      "Name": "StarSize",
+      "States": [
+        {
+          "Name": "HalfSize",
+          "InstructionSaves": [
+            {
+              "Type": "float",
+              "Member": "Scale",
+              "Value": 0.6,
+              "Time": 0.0
+            },
+            {
+              "Type": "float",
+              "Member": "Alpha",
+              "Value": 0.4,
+              "Time": 0.0
+            }
+          ]
+        },
+        {
+          "Name": "FullSize",
+          "InstructionSaves": [
+            {
+              "Type": "float",
+              "Member": "Scale",
+              "Value": 1.0,
+              "Time": 0.0
+            },
+            {
+              "Type": "float",
+              "Member": "Alpha",
+              "Value": 0.7,
+              "Time": 0.0
+            }
+          ]
+        }
+      ],
+      "ExcludedVariables": [
+        "X",
+        "Y",
+        "Z",
+        "SpriteInstanceTexture",
+        "TimeBetweenShots"
+      ]
+    },
+    {
+      "Name": "StarType",
+      "States": [
+        {
+          "Name": "White",
+          "InstructionSaves": [
+            {
+              "Type": "Texture2D",
+              "Member": "SpriteInstanceTexture",
+              "Value": "white",
+              "Time": 0.0
+            }
+          ]
+        },
+        {
+          "Name": "Pink",
+          "InstructionSaves": [
+            {
+              "Type": "Texture2D",
+              "Member": "SpriteInstanceTexture",
+              "Value": "pink",
+              "Time": 0.0
+            }
+          ]
+        },
+        {
+          "Name": "Green",
+          "InstructionSaves": [
+            {
+              "Type": "Texture2D",
+              "Member": "SpriteInstanceTexture",
+              "Value": "green",
+              "Time": 0.0
+            }
+          ]
+        },
+        {
+          "Name": "Blue",
+          "InstructionSaves": [
+            {
+              "Type": "Texture2D",
+              "Member": "SpriteInstanceTexture",
+              "Value": "blue",
+              "Time": 0.0
+            }
+          ]
+        },
+        {
+          "Name": "SmallCross",
+          "InstructionSaves": [
+            {
+              "Type": "Texture2D",
+              "Member": "SpriteInstanceTexture",
+              "Value": "smallcross",
+              "Time": 0.0
+            }
+          ]
+        },
+        {
+          "Name": "LargeCross",
+          "InstructionSaves": [
+            {
+              "Type": "Texture2D",
+              "Member": "SpriteInstanceTexture",
+              "Value": "largecross",
+              "Time": 0.0
+            }
+          ]
+        }
+      ],
+      "ExcludedVariables": [
+        "X",
+        "Y",
+        "Z",
+        "Scale",
+        "Alpha",
+        "TimeBetweenShots"
+      ]
+    }
+  ],
+  "Name": "Entities\\Star",
+  "CustomClassesForExport": []
+}
