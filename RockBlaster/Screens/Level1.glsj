@@ -18,6 +18,20 @@
       "Properties": [
         {
           "Name": "Type",
+          "Value": "int",
+          "Type": "String"
+        }
+      ],
+      "Name": "BaseHealingScore",
+      "DefaultValue": 1500,
+      "SetByDerived": true,
+      "DefinedByBase": true,
+      "Summary": "Base amount of points needed for healing"
+    },
+    {
+      "Properties": [
+        {
+          "Name": "Type",
           "Value": "string",
           "Type": "String"
         },

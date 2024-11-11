@@ -33,6 +33,43 @@
       ],
       "Name": "DefaultLayer",
       "Category": "Layer"
+    },
+    {
+      "Properties": [
+        {
+          "Name": "Type",
+          "Value": "int",
+          "Type": "String"
+        }
+      ],
+      "Name": "BaseHealingScore",
+      "DefaultValue": 1500,
+      "SetByDerived": true,
+      "Summary": "Base amount of points needed for healing"
+    },
+    {
+      "Properties": [
+        {
+          "Name": "Type",
+          "Value": "int",
+          "Type": "String"
+        }
+      ],
+      "Name": "MinBaseHealingRate",
+      "DefaultValue": 500,
+      "SetByDerived": true
+    },
+    {
+      "Properties": [
+        {
+          "Name": "Type",
+          "Value": "int",
+          "Type": "String"
+        }
+      ],
+      "Name": "MaxBaseHealingRate",
+      "DefaultValue": 2500,
+      "SetByDerived": true
     }
   ],
   "NamedObjects": [
@@ -473,7 +510,7 @@
       "GenerateTimedEmit": true
     },
     {
-      "InstanceName": "Score",
+      "InstanceName": "StartMenu",
       "Properties": [
         {
           "Name": "AssociateWithFactory",
@@ -483,7 +520,7 @@
       ],
       "InstructionSaves": [],
       "SourceFile": "GumProject/Screens/GameScreenGum.gusx",
-      "SourceName": "Score (RockBlaster.GumRuntimes.TextRuntime)",
+      "SourceName": "StartMenu (RockBlaster.GumRuntimes.ContainerRuntime)",
       "AttachToContainer": true,
       "GenerateTimedEmit": true
     }

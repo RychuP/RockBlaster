@@ -308,6 +308,1056 @@
         "ElementType": "Screens",
         "EventType": 6,
         "TimestampUtc": "2024-11-10T06:03:56.7855289Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "HealthBar",
+        "ElementType": "Components",
+        "EventType": 1,
+        "TimestampUtc": "2024-11-10T23:56:12.2193306Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "InfoComponent",
+        "ElementType": "Components",
+        "EventType": 1,
+        "TimestampUtc": "2024-11-10T23:56:24.0436969Z"
+      },
+      {
+        "NewName": "GameScreenGum.Graphic",
+        "OldName": "GameScreenGum.IconInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-10T23:57:39.6520073Z"
+      },
+      {
+        "NewName": "TextInfoBox",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 0,
+        "TimestampUtc": "2024-11-10T23:58:38.0260226Z"
+      },
+      {
+        "NewName": "TextInfoBox (Container).NineSliceInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-10T23:58:49.7888765Z"
+      },
+      {
+        "NewName": "TextInfoBox (Container).Background",
+        "OldName": "TextInfoBox (Container).NineSliceInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-10T23:59:39.6604073Z"
+      },
+      {
+        "NewName": "TextInfoBox (Container).Content",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T00:00:44.1300907Z"
+      },
+      {
+        "NewName": "TextInfoBox (Container).IconInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T00:01:34.8400125Z"
+      },
+      {
+        "NewName": "TextInfoBox (Container).TextInstance",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T00:01:40.6306474Z"
+      },
+      {
+        "NewName": "TextInfoBox (Container).TextInstance1",
+        "OldName": null,
+        "ElementType": "Components",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T00:01:44.9161351Z"
+      },
+      {
+        "NewName": "TextInfoBox (Container).Score",
+        "OldName": "TextInfoBox (Container).TextInstance1",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T00:01:50.1205399Z"
+      },
+      {
+        "NewName": "TextInfoBox (Container).Graphic",
+        "OldName": "TextInfoBox (Container).IconInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T00:06:19.3384965Z"
+      },
+      {
+        "NewName": "TextInfoBox (Container).Description",
+        "OldName": "TextInfoBox (Container).TextInstance",
+        "ElementType": "Components",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T00:06:26.0543337Z"
+      },
+      {
+        "NewName": "GameScreenGum.TextInfoBoxInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T00:13:22.4417634Z"
+      },
+      {
+        "NewName": "GameScreenGum.RockSpawnRate",
+        "OldName": "GameScreenGum.TextInfoBoxInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T00:14:17.380661Z"
+      },
+      {
+        "NewName": "GameScreenGum.TextInfoBoxInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T00:17:11.4291351Z"
+      },
+      {
+        "NewName": "GameScreenGum.RockCounter",
+        "OldName": "GameScreenGum.TextInfoBoxInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T00:19:02.0152057Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Container ScoreHud in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T00:27:29.976458Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.NineSlice Background in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T00:27:30.0545881Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Text Description in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T00:27:30.0545881Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Elements/Icon Graphic in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T00:27:30.0701887Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Text Score in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T00:27:30.0701887Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Container Content in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T00:27:30.085805Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Container HealthBar in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T00:27:44.1918606Z"
+      },
+      {
+        "NewName": "GameScreenGum.HealthBard",
+        "OldName": "GameScreenGum.PercentBarIconInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T00:27:54.618842Z"
+      },
+      {
+        "NewName": "GameScreenGum.HealthBar",
+        "OldName": "GameScreenGum.HealthBard",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T00:27:57.5965128Z"
+      },
+      {
+        "NewName": "GameScreenGum.TextInfoBoxInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T00:28:40.7697794Z"
+      },
+      {
+        "NewName": "GameScreenGum.ScoreCounter",
+        "OldName": "GameScreenGum.TextInfoBoxInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T00:28:53.0447358Z"
+      },
+      {
+        "NewName": "GameScreenGum.SpawnRate",
+        "OldName": "GameScreenGum.RockSpawnRate",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T00:29:04.0030378Z"
+      },
+      {
+        "NewName": "GameScreenGum.SpawnRateInfo",
+        "OldName": "GameScreenGum.SpawnRate",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T00:29:17.006393Z"
+      },
+      {
+        "NewName": "GameScreenGum.DifficultyInfo",
+        "OldName": "GameScreenGum.SpawnRateInfo",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T01:32:30.5717763Z"
+      },
+      {
+        "NewName": "GameScreenGum.TextInfoBoxInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T01:32:41.6260015Z"
+      },
+      {
+        "NewName": "GameScreenGum.HealCountdown",
+        "OldName": "GameScreenGum.TextInfoBoxInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T01:35:18.9938042Z"
+      },
+      {
+        "NewName": "GameScreenGum.MiddleSection",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T01:37:12.2887735Z"
+      },
+      {
+        "NewName": "GameScreenGum.TextInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T03:04:11.3527884Z"
+      },
+      {
+        "NewName": "GameScreenGum.ValueIndicator",
+        "OldName": "GameScreenGum.TextInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T03:09:49.3586669Z"
+      },
+      {
+        "NewName": "GameScreenGum.Instructions",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T03:59:05.8646658Z"
+      },
+      {
+        "NewName": "GameScreenGum.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T04:18:16.4106132Z"
+      },
+      {
+        "NewName": "GameScreenGum.RockBlasterLogo",
+        "OldName": "GameScreenGum.SpriteInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T04:19:45.8985593Z"
+      },
+      {
+        "NewName": "GameScreenGum.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T04:19:51.5261119Z"
+      },
+      {
+        "NewName": "GameScreenGum.FlatRedBallLogo",
+        "OldName": "GameScreenGum.SpriteInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T04:20:02.8032529Z"
+      },
+      {
+        "NewName": "GameScreenGum.ButtonStandardInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T04:22:13.4489488Z"
+      },
+      {
+        "NewName": "GameScreenGum.StartButton",
+        "OldName": "GameScreenGum.ButtonStandardInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T04:22:35.1158813Z"
+      },
+      {
+        "NewName": "GameScreenGum.Rocks",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T04:25:20.5960651Z"
+      },
+      {
+        "NewName": "GameScreenGum.NineSliceInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T04:26:47.2994126Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.NineSlice NineSliceInstance in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T04:26:56.344161Z"
+      },
+      {
+        "NewName": "GameScreenGum.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T04:27:01.514852Z"
+      },
+      {
+        "NewName": "GameScreenGum.SpriteInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T04:27:05.5763628Z"
+      },
+      {
+        "NewName": "GameScreenGum.SpriteInstance2",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T04:27:08.2476357Z"
+      },
+      {
+        "NewName": "GameScreenGum.LargeRock",
+        "OldName": "GameScreenGum.SpriteInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T04:27:49.1888753Z"
+      },
+      {
+        "NewName": "GameScreenGum.MediumRock",
+        "OldName": "GameScreenGum.LargeRock",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T04:27:54.0428145Z"
+      },
+      {
+        "NewName": "GameScreenGum.LargeRock",
+        "OldName": "GameScreenGum.SpriteInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T04:28:23.5310334Z"
+      },
+      {
+        "NewName": "GameScreenGum.SmallRock",
+        "OldName": "GameScreenGum.SpriteInstance2",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T04:28:32.5604555Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Sprite MediumRock in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T04:31:17.7858799Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Sprite LargeRock in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T04:31:57.5007022Z"
+      },
+      {
+        "NewName": "GameScreenGum.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T04:32:17.8395214Z"
+      },
+      {
+        "NewName": "GameScreenGum.SpriteInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T04:32:21.8558021Z"
+      },
+      {
+        "NewName": "GameScreenGum.LargeRock",
+        "OldName": "GameScreenGum.SpriteInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T04:32:35.5472123Z"
+      },
+      {
+        "NewName": "GameScreenGum.MediumRock",
+        "OldName": "GameScreenGum.SpriteInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T04:32:43.5634643Z"
+      },
+      {
+        "NewName": "GameScreenGum.TextInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T04:35:25.3703279Z"
+      },
+      {
+        "NewName": "GameScreenGum.TextInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T04:35:47.3651818Z"
+      },
+      {
+        "NewName": "GameScreenGum.TextInstance2",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T04:35:50.6144168Z"
+      },
+      {
+        "NewName": "GameScreenGum.Description",
+        "OldName": "GameScreenGum.TextInstance2",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T04:41:05.0695312Z"
+      },
+      {
+        "NewName": "GameScreenGum.SmallRockDescription",
+        "OldName": "GameScreenGum.TextInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T04:41:58.5381823Z"
+      },
+      {
+        "NewName": "GameScreenGum.LargeRockDescription",
+        "OldName": "GameScreenGum.Description",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T04:42:15.7658889Z"
+      },
+      {
+        "NewName": "GameScreenGum.MediumRockDescription",
+        "OldName": "GameScreenGum.TextInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T04:42:23.2058778Z"
+      },
+      {
+        "NewName": "GameScreenGum.TextInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T04:57:50.1638251Z"
+      },
+      {
+        "NewName": "GameScreenGum.TextInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T04:58:07.9076752Z"
+      },
+      {
+        "NewName": "GameScreenGum.TextInstance2",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T04:58:10.485159Z"
+      },
+      {
+        "NewName": "GameScreenGum.LargeRockValue",
+        "OldName": "GameScreenGum.TextInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T04:58:55.5765795Z"
+      },
+      {
+        "NewName": "GameScreenGum.MediumRockValue",
+        "OldName": "GameScreenGum.TextInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T04:59:02.7353517Z"
+      },
+      {
+        "NewName": "GameScreenGum.Small RockValue",
+        "OldName": "GameScreenGum.TextInstance2",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T04:59:09.0080132Z"
+      },
+      {
+        "NewName": "GameScreenGum.StartMenu",
+        "OldName": "GameScreenGum.Instructions",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T05:04:52.0545663Z"
+      },
+      {
+        "NewName": "GameScreenGum.SpriteInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:07:10.8508436Z"
+      },
+      {
+        "NewName": "GameScreenGum.Player",
+        "OldName": "GameScreenGum.SpriteInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T05:07:20.5116572Z"
+      },
+      {
+        "NewName": "GameScreenGum.MainSection",
+        "OldName": "GameScreenGum.StartMenu",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T05:15:29.5828949Z"
+      },
+      {
+        "NewName": "GameScreenGum.StartMenu",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:15:44.1782017Z"
+      },
+      {
+        "NewName": "GameScreenGum.ToastInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:21:51.1979854Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Controls/Toast ToastInstance in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T05:22:08.3431533Z"
+      },
+      {
+        "NewName": "GameScreenGum.RockDescriptions",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:22:31.0779521Z"
+      },
+      {
+        "NewName": "GameScreenGum.ToastInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:22:40.1715709Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Controls/Toast ToastInstance in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T05:24:38.6236003Z"
+      },
+      {
+        "NewName": "GameScreenGum.NineSliceInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:26:03.9421755Z"
+      },
+      {
+        "NewName": "GameScreenGum.SmallRockDesc",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:33:28.8321729Z"
+      },
+      {
+        "NewName": "GameScreenGum.SmallRockDescText",
+        "OldName": "GameScreenGum.SmallRockDescription",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T05:34:24.0317348Z"
+      },
+      {
+        "NewName": "GameScreenGum.SmallRockValue",
+        "OldName": "GameScreenGum.Small RockValue",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T05:36:02.4103855Z"
+      },
+      {
+        "NewName": "GameScreenGum.MediumRockDesc",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:36:24.381114Z"
+      },
+      {
+        "NewName": "GameScreenGum.MediumRockDescText",
+        "OldName": "GameScreenGum.MediumRockDescription",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T05:36:39.1329062Z"
+      },
+      {
+        "NewName": "GameScreenGum.LargeRockDesc",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:38:09.7015399Z"
+      },
+      {
+        "NewName": "GameScreenGum.LargeRockDescText",
+        "OldName": "GameScreenGum.LargeRockDescription",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T05:38:23.9891006Z"
+      },
+      {
+        "NewName": "GameScreenGum.NineSliceInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:43:43.7543634Z"
+      },
+      {
+        "NewName": "GameScreenGum.Rocks1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:43:43.7699766Z"
+      },
+      {
+        "NewName": "GameScreenGum.LargeRock1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:43:43.7855971Z"
+      },
+      {
+        "NewName": "GameScreenGum.MediumRock1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:43:43.8012211Z"
+      },
+      {
+        "NewName": "GameScreenGum.SmallRock1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:43:43.8012211Z"
+      },
+      {
+        "NewName": "GameScreenGum.SmallRockDescText1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:43:43.8168284Z"
+      },
+      {
+        "NewName": "GameScreenGum.MediumRockDescText1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:43:43.8168284Z"
+      },
+      {
+        "NewName": "GameScreenGum.LargeRockDescText1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:43:43.8324583Z"
+      },
+      {
+        "NewName": "GameScreenGum.LargeRockValue1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:43:43.8480555Z"
+      },
+      {
+        "NewName": "GameScreenGum.MediumRockValue1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:43:43.8480555Z"
+      },
+      {
+        "NewName": "GameScreenGum.SmallRockValue1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:43:43.8636753Z"
+      },
+      {
+        "NewName": "GameScreenGum.RockDescriptions1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:43:43.8636753Z"
+      },
+      {
+        "NewName": "GameScreenGum.SmallRockDesc1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:43:43.8793227Z"
+      },
+      {
+        "NewName": "GameScreenGum.MediumRockDesc1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:43:43.8949431Z"
+      },
+      {
+        "NewName": "GameScreenGum.LargeRockDesc1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T05:43:43.9105701Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Container Rocks1 in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T05:44:03.8278888Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Text LargeRockDescText1 in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T05:44:03.9683575Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Text LargeRockValue1 in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T05:44:03.9683575Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Container LargeRockDesc1 in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T05:44:03.9839741Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Sprite LargeRock1 in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T05:44:03.9839741Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Text MediumRockDescText1 in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T05:44:03.9995992Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Text MediumRockValue1 in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T05:44:04.0152046Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Container MediumRockDesc1 in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T05:44:04.0152046Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Sprite MediumRock1 in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T05:44:04.0308334Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Text SmallRockDescText1 in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T05:44:04.0308334Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Text SmallRockValue1 in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T05:44:04.0464605Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Container SmallRockDesc1 in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T05:44:04.0620753Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Sprite SmallRock1 in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T05:44:04.0620753Z"
+      },
+      {
+        "NewName": "GameScreenGum.Options",
+        "OldName": "GameScreenGum.RockDescriptions1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T05:45:05.4652832Z"
+      },
+      {
+        "NewName": "GameScreenGum.RockDescBackground",
+        "OldName": "GameScreenGum.NineSliceInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T05:45:16.6321308Z"
+      },
+      {
+        "NewName": "GameScreenGum.OptionsBackground",
+        "OldName": "GameScreenGum.NineSliceInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T05:45:25.4380992Z"
+      },
+      {
+        "NewName": "GameScreenGum.RockDescTitile",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T06:22:10.6860697Z"
+      },
+      {
+        "NewName": "GameScreenGum.NineSliceInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T06:22:41.6503481Z"
+      },
+      {
+        "NewName": "GameScreenGum.TextInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T06:22:54.250694Z"
+      },
+      {
+        "NewName": "GameScreenGum.RockDescTitile1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T06:33:33.329242Z"
+      },
+      {
+        "NewName": "GameScreenGum.NineSliceInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T06:33:33.3761287Z"
+      },
+      {
+        "NewName": "GameScreenGum.TextInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T06:33:33.3917507Z"
+      },
+      {
+        "NewName": null,
+        "OldName": "GameScreenGum.Container MiddleSection in GameScreenGum",
+        "ElementType": "Screens",
+        "EventType": 6,
+        "TimestampUtc": "2024-11-11T07:02:37.8478035Z"
+      },
+      {
+        "NewName": "GameScreenGum.HealingOptions",
+        "OldName": "GameScreenGum.Options",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T07:14:25.508176Z"
+      },
+      {
+        "NewName": "GameScreenGum.HealingOptionsBG",
+        "OldName": "GameScreenGum.OptionsBackground",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T07:14:38.4819238Z"
+      },
+      {
+        "NewName": "GameScreenGum.HealingOptionsTitle",
+        "OldName": "GameScreenGum.RockDescTitile1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T07:14:51.0303786Z"
+      },
+      {
+        "NewName": "GameScreenGum.HealingOptTitleBG",
+        "OldName": "GameScreenGum.NineSliceInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T07:15:06.0439314Z"
+      },
+      {
+        "NewName": "GameScreenGum.HealingOptionsTitl",
+        "OldName": "GameScreenGum.TextInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T07:15:35.4877959Z"
+      },
+      {
+        "NewName": "GameScreenGum.HealingOptTitleContainer",
+        "OldName": "GameScreenGum.HealingOptionsTitle",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T07:15:51.9319522Z"
+      },
+      {
+        "NewName": "GameScreenGum.HealingOptionsTitle",
+        "OldName": "GameScreenGum.HealingOptionsTitl",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T07:16:01.187408Z"
+      },
+      {
+        "NewName": "GameScreenGum.TextInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T07:16:30.410195Z"
+      },
+      {
+        "NewName": "GameScreenGum.Healing Description",
+        "OldName": "GameScreenGum.TextInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T07:16:44.1439972Z"
+      },
+      {
+        "NewName": "GameScreenGum.RepairDescriptionContainer",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T07:20:55.1728643Z"
+      },
+      {
+        "NewName": "GameScreenGum.TextInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T07:22:24.0034005Z"
+      },
+      {
+        "NewName": "GameScreenGum.HealingValue",
+        "OldName": "GameScreenGum.TextInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T07:22:37.47421Z"
+      },
+      {
+        "NewName": "GameScreenGum.HealingValueContainer",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T07:26:17.4613919Z"
+      },
+      {
+        "NewName": "GameScreenGum.TextInstance1",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T07:29:34.041037Z"
+      },
+      {
+        "NewName": "GameScreenGum.SliderInstance",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T07:31:34.4632417Z"
+      },
+      {
+        "NewName": "GameScreenGum.HealingOptionsContent",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T07:32:56.9482381Z"
+      },
+      {
+        "NewName": "GameScreenGum.TextInstance2",
+        "OldName": null,
+        "ElementType": "Screens",
+        "EventType": 5,
+        "TimestampUtc": "2024-11-11T07:35:15.2310751Z"
+      },
+      {
+        "NewName": "GameScreenGum.RepairExplanation",
+        "OldName": "GameScreenGum.TextInstance2",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T07:35:38.7508918Z"
+      },
+      {
+        "NewName": "GameScreenGum.HealingPointsEnding",
+        "OldName": "GameScreenGum.TextInstance1",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T07:38:59.817478Z"
+      },
+      {
+        "NewName": "GameScreenGum.RockDescTitileContainer",
+        "OldName": "GameScreenGum.RockDescTitile",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T07:43:31.0692701Z"
+      },
+      {
+        "NewName": "GameScreenGum.RockDescTitle",
+        "OldName": "GameScreenGum.TextInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T07:43:47.4618207Z"
+      },
+      {
+        "NewName": "GameScreenGum.HealingSlider",
+        "OldName": "GameScreenGum.SliderInstance",
+        "ElementType": "Screens",
+        "EventType": 7,
+        "TimestampUtc": "2024-11-11T07:47:35.4678502Z"
       }
     ]
   }

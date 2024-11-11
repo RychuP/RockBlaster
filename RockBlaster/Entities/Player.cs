@@ -15,6 +15,8 @@ namespace RockBlaster.Entities;
 
 public partial class Player
 {
+    public event EventHandler<HealthEventArgs> HealthChanged;
+
     // two offsets used to detect when player ship goes off screen
     // and needs to be repositioned on the opposite side
     float _offsetX;
@@ -23,9 +25,16 @@ public partial class Player
     // bullet delay
     double _lastShotTime;
 
+    // keep on shooting when true
+    bool _autoFire;
+
+    bool _isStopped = true;
+
     public I1DInput TurningInput { get; set; }
     
     public IPressableInput ShootingInput { get; set; }
+
+    public bool NeedsHealing { get => Health < StartingHealth; }
 
     int _health;
     public int Health
@@ -34,8 +43,9 @@ public partial class Player
         set
         {
             if (_health == value) return;
+            var prevHealth = _health;
             _health = value;
-            OnHealthChanged();
+            OnHealthChanged(prevHealth, _health);
         }
     }
 
@@ -47,7 +57,6 @@ public partial class Player
     private void CustomInitialize()
     {
         AssignInput();
-        AddHealthBar();
         CalculateRepositionOffsets();
     }
 
@@ -73,13 +82,6 @@ public partial class Player
         ShootingInput = InputManager.Keyboard.GetKey(Keys.Space);
     }
 
-    void AddHealthBar()
-    {
-        Health = StartingHealth;
-        //var hudParent = gumAttachmentWrappers[0];
-        //hudParent.ParentRotationChangesRotation = false;
-    }
-
     void CalculateRepositionOffsets()
     {
         _offsetX = Camera.Main.OrthogonalWidth / 2;
@@ -90,7 +92,9 @@ public partial class Player
     {
         // Negative value is needed so that holding "left" turns to the left
         RotationZVelocity = -TurningInput.Value * TurningSpeed;
-        Acceleration = RotationMatrix.Up * MovementSpeed;
+
+        if (!_isStopped)
+            Acceleration = RotationMatrix.Up * MovementSpeed;
 
         // reposition the ship when off bounds
         if (X < -_offsetX - CircleInstanceRadius || X > _offsetX + CircleInstanceRadius) X = -X;
@@ -99,44 +103,63 @@ public partial class Player
 
     void ShootingActivity()
     {
-        if (!ShootingInput.IsDown 
-            || TimeManager.CurrentScreenSecondsSince(_lastShotTime) < TimeBetweenShots)
+        if (ShootingInput.WasJustPressed)
+            _autoFire = !_autoFire;
+
+        if (!_autoFire || TimeManager.CurrentScreenSecondsSince(_lastShotTime) < TimeBetweenShots)
             return;
 
-        // We'll create 2 bullets because it looks much cooler than 1
-        Bullet firstBullet = Factories.BulletFactory.CreateNew();
-        firstBullet.Position = Position;
-        firstBullet.Position += RotationMatrix.Up * 12;
-        // This is the bullet on the right side when the ship is facing up.
-        // Adding along the Right vector will move it to the right relative to the ship
-        firstBullet.Position += RotationMatrix.Right * 6;
-        firstBullet.RotationZ = RotationZ;
-        firstBullet.Velocity = RotationMatrix.Up * firstBullet.MovementSpeed;
-
-        Bullet secondBullet = Factories.BulletFactory.CreateNew();
-        secondBullet.Position = Position;
-        secondBullet.Position += RotationMatrix.Up * 12;
-        // This bullet is moved along the Right vector, but in the nevative
-        // direction, making it the bullet on the left.
-        secondBullet.Position -= RotationMatrix.Right * 6;
-        secondBullet.RotationZ = RotationZ;
-        secondBullet.Velocity = RotationMatrix.Up * secondBullet.MovementSpeed;
+        FireBullet(RotationMatrix.Right * 6);
+        FireBullet(-RotationMatrix.Right * 6);
 
         BulletSound.Play();
         _lastShotTime = TimeManager.CurrentScreenTime;
     }
 
-    void OnHealthChanged()
+    void FireBullet(Vector3 offset)
     {
-        // Multiply the value by 100 so that full health is 100%
-        HealthBarRuntimeInstance.PercentFull = 100 * Health / (float)StartingHealth;
-        
+        Bullet bullet = Factories.BulletFactory.CreateNew();
+        bullet.Position = Position;
+        bullet.Position += RotationMatrix.Up * 12;
+        bullet.Position += offset;
+        bullet.RotationZ = RotationZ;
+        bullet.Velocity = RotationMatrix.Up * bullet.MovementSpeed;
+    }
 
-        if (Health < StartingHealth)
+    public void Heal()
+    {
+        Health++;
+    }
+
+    public void StartFlying()
+    {
+        _isStopped = false;
+    }
+
+    void OnHealthChanged(int prevHealth, int newHealth)
+    {
+        if (newHealth < prevHealth)
         {
             HitSound.Play();
             if (_health <= 0)
                 Destroy();
         }
+        else if (newHealth == prevHealth + 1) 
+        {
+            HealSound.Play();
+        }
+
+        var args = new HealthEventArgs()
+        {
+            PrevHealth = prevHealth,
+            NewHealth = newHealth,
+        };
+        HealthChanged?.Invoke(this, args);
     }
+}
+
+public class HealthEventArgs : EventArgs
+{
+    public int PrevHealth { get; init; }
+    public int NewHealth { get; init; }
 }

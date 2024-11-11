@@ -14,15 +14,15 @@ namespace RockBlaster.Entities;
 
 public partial class RockSpawner
 {
-    bool _isStopped;
+    bool _isStopped = true;
     double _lastSpawnTime;
-    float _rocksPerSecond;
+    public float RocksPerSecond { get; private set; }
 
     bool IsTimeToSpawn
     {
         get
         {
-            float spawnFrequency = 1 / _rocksPerSecond;
+            float spawnFrequency = 1 / RocksPerSecond;
             return TimeManager.CurrentScreenSecondsSince(_lastSpawnTime) > spawnFrequency;
         }
     }
@@ -34,7 +34,7 @@ public partial class RockSpawner
     /// </summary>
     private void CustomInitialize()
     {
-        _rocksPerSecond = InitialRocksPerSecond;
+        RocksPerSecond = InitialRocksPerSecond;
     }
 
     private void CustomActivity()
@@ -45,7 +45,7 @@ public partial class RockSpawner
         {
             PerformSpawn();
         }
-        _rocksPerSecond += TimeManager.SecondDifference * SpawnRateIncrease;
+        RocksPerSecond += TimeManager.SecondDifference * SpawnRateIncrease;
     }
 
     private void CustomDestroy()
@@ -67,6 +67,7 @@ public partial class RockSpawner
         rock.CurrentRockSizeState = Rock.RockSize.Size4;
         rock.Position = position;
         rock.Velocity = velocity;
+        rock.Rotate();
 
         _lastSpawnTime = TimeManager.CurrentScreenTime;
     }
@@ -178,10 +179,10 @@ public partial class RockSpawner
         _isStopped = true;
     }
 
-    public void Restart()
+    public void Start()
     {
         _isStopped = false;
-        _rocksPerSecond = InitialRocksPerSecond;
+        RocksPerSecond = InitialRocksPerSecond;
         _lastSpawnTime = 0;
     }
 }

@@ -16,14 +16,13 @@ namespace RockBlaster.Screens
         {
             bullet.Destroy();
             rock.TakeHit();
-
-            DataTypes.GlobalData.PlayerData.Score += rock.PointValue;
-            Score.Text = DataTypes.GlobalData.PlayerData.Score.ToString();
+            Score += rock.PointValue;
+            HealingScore -= rock.PointValue;
+            RocksDestroyed++;
         }
         void OnPlayerVsRockCollided (Player player, Rock rock) 
         {
             player.Health--;
-            GumScreen.HealthPercent = 100 * player.Health / (float)player.StartingHealth;
             rock.TakeHit();
         }
     }

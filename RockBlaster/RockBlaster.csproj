@@ -23,29 +23,21 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>bullet1</Name>
     </None>
-    <None Include="Content\Entities\Player\bullet2.wav">
+    <None Include="Content\Entities\Player\bullet.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>bullet2</Name>
+      <Name>bullet</Name>
+    </None>
+    <None Include="Content\Entities\Player\heal.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>heal</Name>
     </None>
     <None Include="Content\Entities\Player\hit.wav">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>hit</Name>
     </None>
-    <None Include="Content\Entities\Player\tyrianship1.png">
+    <None Include="Content\Entities\Player\ship.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>tyrianship1</Name>
-    </None>
-    <None Include="Content\Entities\Player\tyrianship2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>tyrianship2</Name>
-    </None>
-    <None Include="Content\Entities\Player\tyrianship3.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>tyrianship3</Name>
-    </None>
-    <None Include="Content\Entities\Player\tyrianship4.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>tyrianship4</Name>
+      <Name>ship</Name>
     </None>
     <None Include="Content\Entities\Rock\rock1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -247,13 +239,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>VerticalLines</Name>
     </None>
-    <None Include="Content\GumProject\Components\HealthBar.gucx">
+    <None Include="Content\GumProject\Components\TextInfoBox.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>HealthBar</Name>
-    </None>
-    <None Include="Content\GumProject\Components\InfoComponent.gucx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>InfoComponent</Name>
+      <Name>TextInfoBox</Name>
     </None>
     <None Include="Content\GumProject\FontCache\Font10Arial.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -327,6 +315,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font28Arial_Bold_0</Name>
     </None>
+    <None Include="Content\GumProject\frblogo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>frblogo</Name>
+    </None>
     <None Include="Content\GumProject\gameover.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>gameover</Name>
@@ -334,6 +326,10 @@
     <None Include="Content\GumProject\GumProject.gumx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GumProject</Name>
+    </None>
+    <None Include="Content\GumProject\rockblasterlogo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>rockblasterlogo</Name>
     </None>
     <None Include="Content\GumProject\Screens\GameScreenGum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -618,14 +614,6 @@
       <DependentUpon>GameScreenGumRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\GumIdb.Generated.cs" />
-    <Compile Include="GumRuntimes\HealthBarRuntime.cs" />
-    <Compile Include="GumRuntimes\HealthBarRuntime.Generated.cs">
-      <DependentUpon>HealthBarRuntime.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GumRuntimes\InfoComponentRuntime.cs" />
-    <Compile Include="GumRuntimes\InfoComponentRuntime.Generated.cs">
-      <DependentUpon>InfoComponentRuntime.cs</DependentUpon>
-    </Compile>
     <Compile Include="GumRuntimes\Level1GumRuntime.cs" />
     <Compile Include="GumRuntimes\Level1GumRuntime.Generated.cs">
       <DependentUpon>Level1GumRuntime.cs</DependentUpon>
@@ -634,6 +622,10 @@
     <Compile Include="GumRuntimes\PolygonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\RectangleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\TextInfoBoxRuntime.cs" />
+    <Compile Include="GumRuntimes\TextInfoBoxRuntime.Generated.cs">
+      <DependentUpon>TextInfoBoxRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
     <Compile Include="Performance\IEntityFactory.Generated.cs" />
     <Compile Include="Performance\PoolList.Generated.cs" />

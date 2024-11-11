@@ -7,31 +7,7 @@
   "Is2D": true,
   "ReferencedFiles": [
     {
-      "Name": "Entities/Player/tyrianship1.png",
-      "IsSharedStatic": true,
-      "RuntimeType": "Microsoft.Xna.Framework.Graphics.Texture2D",
-      "ProjectsToExcludeFrom": []
-    },
-    {
-      "Name": "Entities/Player/tyrianship2.png",
-      "IsSharedStatic": true,
-      "RuntimeType": "Microsoft.Xna.Framework.Graphics.Texture2D",
-      "ProjectsToExcludeFrom": []
-    },
-    {
-      "Name": "Entities/Player/tyrianship3.png",
-      "IsSharedStatic": true,
-      "RuntimeType": "Microsoft.Xna.Framework.Graphics.Texture2D",
-      "ProjectsToExcludeFrom": []
-    },
-    {
-      "Name": "Entities/Player/tyrianship4.png",
-      "IsSharedStatic": true,
-      "RuntimeType": "Microsoft.Xna.Framework.Graphics.Texture2D",
-      "ProjectsToExcludeFrom": []
-    },
-    {
-      "Name": "Entities/Player/bullet2.wav",
+      "Name": "Entities/Player/bullet.wav",
       "IsSharedStatic": true,
       "RuntimeType": "Microsoft.Xna.Framework.Audio.SoundEffect",
       "ProjectsToExcludeFrom": []
@@ -46,6 +22,12 @@
       "Name": "Entities/Player/ship.png",
       "IsSharedStatic": true,
       "RuntimeType": "Microsoft.Xna.Framework.Graphics.Texture2D",
+      "ProjectsToExcludeFrom": []
+    },
+    {
+      "Name": "Entities/Player/heal.wav",
+      "IsSharedStatic": true,
+      "RuntimeType": "Microsoft.Xna.Framework.Audio.SoundEffect",
       "ProjectsToExcludeFrom": []
     }
   ],
@@ -70,6 +52,7 @@
         }
       ],
       "Name": "Y",
+      "DefaultValue": -86.0,
       "SetByDerived": true
     },
     {
@@ -300,22 +283,6 @@
       "GenerateTimedEmit": true
     },
     {
-      "InstanceName": "HealthBarRuntimeInstance",
-      "SourceClassType": "RockBlaster.GumRuntimes.HealthBarRuntime",
-      "Properties": [
-        {
-          "Name": "AssociateWithFactory",
-          "Value": true,
-          "Type": "bool"
-        }
-      ],
-      "InstructionSaves": [],
-      "SourceType": 3,
-      "SourceFile": "HealthBarRuntime",
-      "AttachToContainer": true,
-      "GenerateTimedEmit": true
-    },
-    {
       "InstanceName": "BulletSound",
       "Properties": [
         {
@@ -325,7 +292,7 @@
         }
       ],
       "InstructionSaves": [],
-      "SourceFile": "Entities/Player/bullet2.wav",
+      "SourceFile": "Entities/Player/bullet.wav",
       "SourceName": "Entire File (SoundEffectInstance)",
       "AttachToContainer": true,
       "GenerateTimedEmit": true
@@ -341,6 +308,21 @@
       ],
       "InstructionSaves": [],
       "SourceFile": "Entities/Player/hit.wav",
+      "SourceName": "Entire File (SoundEffectInstance)",
+      "AttachToContainer": true,
+      "GenerateTimedEmit": true
+    },
+    {
+      "InstanceName": "HealSound",
+      "Properties": [
+        {
+          "Name": "AssociateWithFactory",
+          "Value": true,
+          "Type": "bool"
+        }
+      ],
+      "InstructionSaves": [],
+      "SourceFile": "Entities/Player/heal.wav",
       "SourceName": "Entire File (SoundEffectInstance)",
       "AttachToContainer": true,
       "GenerateTimedEmit": true
