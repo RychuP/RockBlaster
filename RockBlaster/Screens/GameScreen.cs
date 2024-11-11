@@ -174,13 +174,13 @@ public partial class GameScreen
 
     void UpdateHealingValueText()
     {
-        GumScreen.HealingValueText = HealingScore.ToString();
+        GumScreen.HealingValueText = BaseHealingScore.ToString();
     }
 
     void SetStartValues()
     {
         GumScreen.HealthPercent = 100;
-        HealingScore = BaseHealingScore;
+        HealingScore = Convert.ToInt32(BaseHealingScore * Difficulty);
         Player1.Health = Player1.StartingHealth;
         Player1.Y = Player1.StartY;
         RocksDestroyed = 0;
@@ -200,15 +200,6 @@ public partial class GameScreen
         GumScreen.TryAgainButton.Click += TryAgainButton_OnClick;
         GumScreen.StartButton.Click += StartButton_OnClick;
         GumScreen.HealingSlider.ThumbInstance.PositionChanged += HealingSlider_OnSliderPercentChanged;
-    }
-
-    void HandleHealingSliderChange()
-    {
-        var range = MaxBaseHealingRate - MinBaseHealingRate;
-        var percent = GumScreen.HealingSlider.SliderPercent / 100;
-        var value = percent * range;
-        HealingScore = BaseHealingScore = MinBaseHealingRate + (int)value;
-        UpdateHealingValueText();
     }
 
     void RemovalActivity()
@@ -325,6 +316,11 @@ public partial class GameScreen
 
     void HealingSlider_OnSliderPercentChanged(object o, EventArgs e)
     {
-        HandleHealingSliderChange();
+        var range = MaxBaseHealingRate - MinBaseHealingRate;
+        var percent = GumScreen.HealingSlider.SliderPercent / 100;
+        var value = percent * range;
+        BaseHealingScore = MinBaseHealingRate + (int)value;
+        HealingScore = Convert.ToInt32(BaseHealingScore * Difficulty);
+        UpdateHealingValueText();
     }
 }

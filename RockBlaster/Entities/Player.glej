@@ -52,7 +52,6 @@
         }
       ],
       "Name": "Y",
-      "DefaultValue": -86.0,
       "SetByDerived": true
     },
     {
