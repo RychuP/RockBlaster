@@ -319,6 +319,12 @@ of ship health every </Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>HealingOptions.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>HealingOptions.Height</Name>
       <Value xsi:type="xsd:float">159</Value>
@@ -412,6 +418,12 @@ of ship health every </Value>
       <Type>ChildrenLayout</Type>
       <Name>HealingOptionsContent.Children Layout</Name>
       <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>HealingOptionsContent.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -580,6 +592,12 @@ of ship health every </Value>
       <Type>StyleCategory</Type>
       <Name>HealingOptTitleBG.StyleCategoryState</Name>
       <Value xsi:type="xsd:string">TabBordered</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>HealingOptTitleContainer.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -779,6 +797,12 @@ of ship health every </Value>
       <Type>ChildrenLayout</Type>
       <Name>HealingValueContainer.Children Layout</Name>
       <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>HealingValueContainer.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1101,6 +1125,12 @@ of ship health every </Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>MainSection.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>MainSection.Height</Name>
       <Value xsi:type="xsd:float">58.2</Value>
@@ -1415,6 +1445,12 @@ of ship health every </Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>RepairDescriptionContainer.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>RepairDescriptionContainer.Height</Name>
       <Value xsi:type="xsd:float">0</Value>
@@ -1594,6 +1630,12 @@ by current difficulty.</Value>
       <Type>StyleCategory</Type>
       <Name>RockDescBackground.StyleCategoryState</Name>
       <Value xsi:type="xsd:string">Panel</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>RockDescriptions.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -2117,6 +2159,12 @@ by current difficulty.</Value>
       <Type>PositionUnitType</Type>
       <Name>StartButton.Y Units</Name>
       <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>StartMenu.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
