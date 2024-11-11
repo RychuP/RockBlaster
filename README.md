@@ -1,5 +1,5 @@
 # RockBlaster
-Rock Blaster is a top-down Asteroids-like game based on the FlatRedBall [tutorial](https://docs.flatredball.com/flatredball/tutorials/rock-blaster). Destroy space rocks and protect your ship. Accumulate points to regain health.
+Rock Blaster is a top-down Asteroids-like game based on a FlatRedBall [tutorial](https://docs.flatredball.com/flatredball/tutorials/rock-blaster). Destroy space rocks and protect your ship. Accumulate points to regain health.
 
 ## Controls:
 
