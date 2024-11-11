@@ -177,12 +177,12 @@ public partial class RockSpawner
     public void Stop()
     {
         _isStopped = true;
+        RocksPerSecond = InitialRocksPerSecond;
     }
 
     public void Start()
     {
         _isStopped = false;
-        RocksPerSecond = InitialRocksPerSecond;
         _lastSpawnTime = 0;
     }
 }

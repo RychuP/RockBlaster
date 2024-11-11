@@ -208,6 +208,19 @@
       "Name": "Drag",
       "DefaultValue": 0.7,
       "SetByDerived": true
+    },
+    {
+      "Properties": [
+        {
+          "Name": "Type",
+          "Value": "int",
+          "Type": "String"
+        }
+      ],
+      "Name": "StartY",
+      "DefaultValue": -86,
+      "SetByDerived": true,
+      "Summary": "Default Y position for newly created players."
     }
   ],
   "Properties": [

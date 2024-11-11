@@ -22,6 +22,8 @@ namespace RockBlaster.Screens;
 public partial class GameScreen
 {
     IPressableInput EnterButton;
+    IPressableInput EscapeButton;
+    IPressableInput PauseButton;
 
     float Difficulty => RockSpawner.RocksPerSecond;
 
@@ -70,7 +72,7 @@ public partial class GameScreen
         AssignInput();
         RegisterEventHandlers();
         SetStartValues();
-        SetRockValuesInStartMenu();
+        ShowRockValuesInStartMenu();
         UpdateHealingValueText();
         StartMenu.Visible = true;
     }
@@ -81,6 +83,8 @@ public partial class GameScreen
         RemovalActivity();
         StartGameActivity();
         GameOverActivity();
+        EscapeButtonActivity();
+        PauseButtonActivity();
     }
 
     private void CustomDestroy()
@@ -99,12 +103,16 @@ public partial class GameScreen
     void RestartGame()
     {
         GameOverHud.Visible = false;
-        GumScreen.HealthPercent = 100;
-        Player1 = Factories.PlayerFactory.CreateNew();
-        Player1.HealthChanged += Player_OnHealthChanged;
+        CreateNewPlayer();
         Player1.StartFlying();
         RockSpawner.Start();
         SetStartValues();
+    }
+
+    void CreateNewPlayer()
+    {
+        Player1 = Factories.PlayerFactory.CreateNew();
+        Player1.HealthChanged += Player_OnHealthChanged;
     }
 
     /// <summary>
@@ -125,6 +133,43 @@ public partial class GameScreen
     void AssignInput()
     {
         EnterButton = InputManager.Keyboard.GetKey(Keys.Enter);
+        EscapeButton = InputManager.Keyboard.GetKey(Keys.Escape);
+        PauseButton = InputManager.Keyboard.GetKey(Keys.P);
+    }
+
+    void EscapeButtonActivity()
+    {
+        if (!EscapeButton.WasJustPressed) return;
+
+        if (StartMenu.Visible || GameOverHud.Visible)
+        {
+            FlatRedBallServices.Game.Exit();
+        }
+        // stop the game and show start menu
+        else
+        {
+            StopGame();
+            Player1.HealthChanged -= Player_OnHealthChanged;
+            Player1.Destroy();
+            CreateNewPlayer();
+            SetStartValues();
+            UpdateDifficultyInfo();
+            StartMenu.Visible = true;
+        }
+    }
+
+    void PauseButtonActivity()
+    {
+        if (!PauseButton.WasJustPressed || StartMenu.Visible || GameOverHud.Visible) return;
+
+        if (!IsPaused)
+        {
+            PauseThisScreen();
+        }
+        else if (IsPaused)
+        {
+            UnpauseThisScreen();
+        }
     }
 
     void UpdateHealingValueText()
@@ -134,13 +179,15 @@ public partial class GameScreen
 
     void SetStartValues()
     {
+        GumScreen.HealthPercent = 100;
         HealingScore = BaseHealingScore;
         Player1.Health = Player1.StartingHealth;
+        Player1.Y = Player1.StartY;
         RocksDestroyed = 0;
         Score = 0;
     }
 
-    void SetRockValuesInStartMenu()
+    void ShowRockValuesInStartMenu()
     {
         GumScreen.SmallRockValueText = Rock.RockSize.Size2.PointValue.ToString();
         GumScreen.MediumRockValueText = Rock.RockSize.Size3.PointValue.ToString();
@@ -192,6 +239,21 @@ public partial class GameScreen
         }
     }
 
+    void DestroyRocksAndBullets()
+    {
+        while (RockList.Count > 0)
+            RockList[0].Destroy();
+
+        while (BulletList.Count > 0)
+            BulletList[0].Destroy();
+    }
+
+    void StopGame()
+    {
+        DestroyRocksAndBullets();
+        RockSpawner.Stop();
+    }
+
     void GameOverActivity()
     {
         if (GameOverHud.Visible == false)
@@ -200,13 +262,7 @@ public partial class GameScreen
             if (PlayerList.Count != 0) return;
 
             GameOverHud.Visible = true;
-            RockSpawner.Stop();
-
-            while (RockList.Count > 0)
-                RockList[0].Destroy();
-
-            while (BulletList.Count > 0)
-                BulletList[0].Destroy();
+            StopGame();
         }
         else if (GameOverHud.Visible == true && EnterButton.WasJustPressed)
         {

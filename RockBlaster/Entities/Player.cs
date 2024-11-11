@@ -136,6 +136,12 @@ public partial class Player
         _isStopped = false;
     }
 
+    public void Stop()
+    {
+        _autoFire = false;
+        _isStopped = true;
+    }
+
     void OnHealthChanged(int prevHealth, int newHealth)
     {
         if (newHealth < prevHealth)
