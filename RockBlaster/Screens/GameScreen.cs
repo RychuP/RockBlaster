@@ -151,8 +151,8 @@ public partial class GameScreen
     {
         Player1.HealthChanged += Player_OnHealthChanged;
         GumScreen.TryAgainButton.Click += TryAgainButton_OnClick;
-        GumScreen.HealingSlider.SliderPercentChanged += HealingSlider_OnSliderPercentChanged;
         GumScreen.StartButton.Click += StartButton_OnClick;
+        GumScreen.HealingSlider.ThumbInstance.PositionChanged += HealingSlider_OnSliderPercentChanged;
     }
 
     void HandleHealingSliderChange()
@@ -218,8 +218,6 @@ public partial class GameScreen
     {
         if (StartMenu.Visible == true)
         {
-            HandleHealingSliderChange();
-
             if (EnterButton.WasJustPressed)
                 StartGame();
         }
@@ -237,7 +235,6 @@ public partial class GameScreen
             HealingScore = Convert.ToInt32(BaseHealingScore * Difficulty);
             if (Player1.NeedsHealing)
                 Player1.Heal();
-
         }
         GumScreen.HealCountdown.ScoreText = HealingScore.ToString();
     }
