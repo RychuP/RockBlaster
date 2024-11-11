@@ -136,10 +136,10 @@ public partial class Player
         _isStopped = false;
     }
 
-    public void Stop()
+    public void Reset()
     {
-        _autoFire = false;
-        _isStopped = true;
+        Health = StartingHealth;
+        Y = StartY;
     }
 
     void OnHealthChanged(int prevHealth, int newHealth)

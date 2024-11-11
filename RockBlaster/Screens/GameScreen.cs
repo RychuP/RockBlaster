@@ -25,9 +25,10 @@ public partial class GameScreen
     IPressableInput EscapeButton;
     IPressableInput PauseButton;
 
-    float Difficulty => RockSpawner.RocksPerSecond;
-
     int _rocksDestroyed = 0;
+    /// <summary>
+    /// Number of <see cref="Rock"/> instances destroyed.
+    /// </summary>
     int RocksDestroyed
     {
         get => _rocksDestroyed;
@@ -42,6 +43,9 @@ public partial class GameScreen
     }
 
     int _healingScore = 0;
+    /// <summary>
+    /// Amount of <see cref="Score"/> points needed to increase <see cref="Player.Health"/> by 1 point.
+    /// </summary>
     int HealingScore
     {
         get => _healingScore;
@@ -54,6 +58,9 @@ public partial class GameScreen
     }
 
     int _score = 0;
+    /// <summary>
+    /// Current accumulation of rock points.
+    /// </summary>
     int Score
     {
         get => _score;
@@ -75,16 +82,6 @@ public partial class GameScreen
         ShowRockValuesInStartMenu();
         UpdateHealingValueText();
         StartMenu.Visible = true;
-    }
-
-    private void CustomActivity(bool firstTimeCalled)
-    {
-        UpdateDifficultyInfo();
-        RemovalActivity();
-        StartGameActivity();
-        GameOverActivity();
-        EscapeButtonActivity();
-        PauseButtonActivity();
     }
 
     private void CustomDestroy()
@@ -109,12 +106,6 @@ public partial class GameScreen
         SetStartValues();
     }
 
-    void CreateNewPlayer()
-    {
-        Player1 = Factories.PlayerFactory.CreateNew();
-        Player1.HealthChanged += Player_OnHealthChanged;
-    }
-
     /// <summary>
     /// Actions to be performed when starting game from the Start menu
     /// </summary>
@@ -125,9 +116,30 @@ public partial class GameScreen
         RockSpawner.Start();
     }
 
+    void ExitToStartMenu()
+    {
+        StopGame();
+        DestroyPlayer();
+        CreateNewPlayer();
+        SetStartValues();
+        StartMenu.Visible = true;
+    }
+
+    void CreateNewPlayer()
+    {
+        Player1 = Factories.PlayerFactory.CreateNew();
+        Player1.HealthChanged += Player_OnHealthChanged;
+    }
+
+    void DestroyPlayer()
+    {
+        Player1.HealthChanged -= Player_OnHealthChanged;
+        Player1.Destroy();
+    }
+
     void UpdateDifficultyInfo()
     {
-        GumScreen.DifficultyInfo.ScoreText = $"{Difficulty:0.00}";
+        GumScreen.DifficultyInfo.ScoreText = $"{RockSpawner.Difficulty:0.00}";
     }
 
     void AssignInput()
@@ -137,41 +149,6 @@ public partial class GameScreen
         PauseButton = InputManager.Keyboard.GetKey(Keys.P);
     }
 
-    void EscapeButtonActivity()
-    {
-        if (!EscapeButton.WasJustPressed) return;
-
-        if (StartMenu.Visible || GameOverHud.Visible)
-        {
-            FlatRedBallServices.Game.Exit();
-        }
-        // stop the game and show start menu
-        else
-        {
-            StopGame();
-            Player1.HealthChanged -= Player_OnHealthChanged;
-            Player1.Destroy();
-            CreateNewPlayer();
-            SetStartValues();
-            UpdateDifficultyInfo();
-            StartMenu.Visible = true;
-        }
-    }
-
-    void PauseButtonActivity()
-    {
-        if (!PauseButton.WasJustPressed || StartMenu.Visible || GameOverHud.Visible) return;
-
-        if (!IsPaused)
-        {
-            PauseThisScreen();
-        }
-        else if (IsPaused)
-        {
-            UnpauseThisScreen();
-        }
-    }
-
     void UpdateHealingValueText()
     {
         GumScreen.HealingValueText = BaseHealingScore.ToString();
@@ -179,10 +156,9 @@ public partial class GameScreen
 
     void SetStartValues()
     {
-        GumScreen.HealthPercent = 100;
-        HealingScore = Convert.ToInt32(BaseHealingScore * Difficulty);
-        Player1.Health = Player1.StartingHealth;
-        Player1.Y = Player1.StartY;
+        RockSpawner.ResetDifficulty();
+        CalculateNewHealingScore();
+        Player1.Reset();
         RocksDestroyed = 0;
         Score = 0;
     }
@@ -192,42 +168,6 @@ public partial class GameScreen
         GumScreen.SmallRockValueText = Rock.RockSize.Size2.PointValue.ToString();
         GumScreen.MediumRockValueText = Rock.RockSize.Size3.PointValue.ToString();
         GumScreen.LargeRockValueText = Rock.RockSize.Size4.PointValue.ToString();
-    }
-
-    void RegisterEventHandlers()
-    {
-        Player1.HealthChanged += Player_OnHealthChanged;
-        GumScreen.TryAgainButton.Click += TryAgainButton_OnClick;
-        GumScreen.StartButton.Click += StartButton_OnClick;
-        GumScreen.HealingSlider.ThumbInstance.PositionChanged += HealingSlider_OnSliderPercentChanged;
-    }
-
-    void RemovalActivity()
-    {
-        // reverse loop since we're going to Destroy
-        for (int i = BulletList.Count - 1; i > -1; i--)
-        {
-            float absoluteX = Math.Abs(BulletList[i].X);
-            float absoluteY = Math.Abs(BulletList[i].Y);
-
-            const float removeBeyond = 600;
-            if (absoluteX > removeBeyond || absoluteY > removeBeyond)
-            {
-                BulletList[i].Destroy();
-            }
-        }
-
-        for (int i = RockList.Count - 1; i > -1; i--)
-        {
-            float absoluteX = Math.Abs(RockList[i].X);
-            float absoluteY = Math.Abs(RockList[i].Y);
-
-            const float removeBeyond = 600;
-            if (absoluteX > removeBeyond || absoluteY > removeBeyond)
-            {
-                RockList[i].Destroy();
-            }
-        }
     }
 
     void DestroyRocksAndBullets()
@@ -245,82 +185,18 @@ public partial class GameScreen
         RockSpawner.Stop();
     }
 
-    void GameOverActivity()
+    void CalculateNewHealingScore()
     {
-        if (GameOverHud.Visible == false)
-        {
-            // check if a player is alive
-            if (PlayerList.Count != 0) return;
-
-            GameOverHud.Visible = true;
-            StopGame();
-        }
-        else if (GameOverHud.Visible == true && EnterButton.WasJustPressed)
-        {
-            RestartGame();
-        }
+        HealingScore = Convert.ToInt32(BaseHealingScore * RockSpawner.Difficulty);
     }
 
-    void StartGameActivity()
+    void SetCursorToHand()
     {
-        if (StartMenu.Visible == true)
-        {
-            if (EnterButton.WasJustPressed)
-                StartGame();
-        }
+        Microsoft.Xna.Framework.Input.Mouse.SetCursor(MouseCursor.Hand);
     }
 
-    void OnRocksDestroyedChanged()
+    void SetCursorToArrow()
     {
-        GumScreen.RockCounter.ScoreText = RocksDestroyed.ToString();
-    }
-
-    void OnHealingScoreChanged()
-    {
-        if (HealingScore <= 0)
-        {
-            HealingScore = Convert.ToInt32(BaseHealingScore * Difficulty);
-            if (Player1.NeedsHealing)
-                Player1.Heal();
-        }
-        GumScreen.HealCountdown.ScoreText = HealingScore.ToString();
-    }
-
-    void OnScoreChanged()
-    {
-        GumScreen.ScoreCounter.ScoreText = Score.ToString();
-    }
-
-    void TryAgainButton_OnClick(IWindow window)
-    {
-        RestartGame();
-    }
-
-    void StartButton_OnClick(IWindow window)
-    {
-        StartGame();
-    }
-
-    void Player_OnHealthChanged(object o, HealthEventArgs e)
-    {
-        if (o is not Player player) return;
-        var percent = 100 * e.NewHealth / (float)player.StartingHealth;
-        GumScreen.HealthPercent = percent;
-        GumScreen.HealthValue = e.NewHealth.ToString();
-        GumScreen.HealthValueColor = percent < 42 ?
-            GumRuntimes.TextRuntime.ColorCategory.Black :
-            GumRuntimes.TextRuntime.ColorCategory.White;
-        if (e.NewHealth <= 0)
-            player.HealthChanged -= Player_OnHealthChanged;
-    }
-
-    void HealingSlider_OnSliderPercentChanged(object o, EventArgs e)
-    {
-        var range = MaxBaseHealingRate - MinBaseHealingRate;
-        var percent = GumScreen.HealingSlider.SliderPercent / 100;
-        var value = percent * range;
-        BaseHealingScore = MinBaseHealingRate + (int)value;
-        HealingScore = Convert.ToInt32(BaseHealingScore * Difficulty);
-        UpdateHealingValueText();
+        Microsoft.Xna.Framework.Input.Mouse.SetCursor(MouseCursor.Arrow);
     }
 }

@@ -14,16 +14,27 @@ namespace RockBlaster.Entities;
 
 public partial class RockSpawner
 {
+    public event EventHandler<DifficultyEventArgs> DifficultyChanged;
+
     bool _isStopped = true;
     double _lastSpawnTime;
-    public float RocksPerSecond { get; private set; }
 
-    bool IsTimeToSpawn
+    float _difficulty = 0;
+    /// <summary>
+    /// Rate of rocks spawn per second
+    /// </summary>
+    public float Difficulty
     {
-        get
+        get => _difficulty;
+        private set
         {
-            float spawnFrequency = 1 / RocksPerSecond;
-            return TimeManager.CurrentScreenSecondsSince(_lastSpawnTime) > spawnFrequency;
+            if (_difficulty == value) return;
+            if (value < InitialRocksPerSecond)
+                throw new ArgumentException("Difficulty cannot fall below the base value.");
+            if (value < _difficulty && value != InitialRocksPerSecond)
+                throw new ArgumentException("Reduction of difficulty is not allowed (unless 0).");
+            _difficulty = value;
+            OnDifficultyChanged();
         }
     }
 
@@ -34,18 +45,15 @@ public partial class RockSpawner
     /// </summary>
     private void CustomInitialize()
     {
-        RocksPerSecond = InitialRocksPerSecond;
+        ResetDifficulty();
     }
 
     private void CustomActivity()
     {
         if (_isStopped) return;
         
-        if (IsTimeToSpawn)
-        {
-            PerformSpawn();
-        }
-        RocksPerSecond += TimeManager.SecondDifference * SpawnRateIncrease;
+        SpawnActivity();
+        IncreaseDifficulty();
     }
 
     private void CustomDestroy()
@@ -56,6 +64,14 @@ public partial class RockSpawner
     private static void CustomLoadStaticContent(string contentManagerName)
     {
 
+    }
+
+    void SpawnActivity()
+    {
+        if (IsTimeToSpawn())
+        {
+            PerformSpawn();
+        }
     }
 
     void PerformSpawn()
@@ -177,7 +193,22 @@ public partial class RockSpawner
     public void Stop()
     {
         _isStopped = true;
-        RocksPerSecond = InitialRocksPerSecond;
+    }
+
+    bool IsTimeToSpawn()
+    {
+        float spawnFrequency = 1 / Difficulty;
+        return TimeManager.CurrentScreenSecondsSince(_lastSpawnTime) > spawnFrequency;
+    }
+
+    public void ResetDifficulty()
+    {
+        Difficulty = InitialRocksPerSecond;
+    }
+
+    void IncreaseDifficulty()
+    {
+        Difficulty += TimeManager.SecondDifference * SpawnRateIncrease;
     }
 
     public void Start()
@@ -185,4 +216,18 @@ public partial class RockSpawner
         _isStopped = false;
         _lastSpawnTime = 0;
     }
+
+    void OnDifficultyChanged()
+    {
+        var args = new DifficultyEventArgs()
+        {
+            Difficulty = Difficulty
+        };
+        DifficultyChanged?.Invoke(this, args);
+    }
+}
+
+public class DifficultyEventArgs : EventArgs
+{
+    public float Difficulty { get; init; }
 }

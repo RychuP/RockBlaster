@@ -1447,7 +1447,7 @@ of ship health every </Value>
     <Variable>
       <Type>bool</Type>
       <Name>RepairDescriptionContainer.HasEvents</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
+      <Value xsi:type="xsd:boolean">true</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
