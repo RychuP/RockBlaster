@@ -1,5 +1,5 @@
 # RockBlaster
-Asteroids type of a game based on the FlatRedBall [tutorial](https://docs.flatredball.com/flatredball/tutorials/rock-blaster). Destroy the space rocks and protect your ship. Accumulate points to regain health.
+Asteroids type of a game based on the FlatRedBall [tutorial](https://docs.flatredball.com/flatredball/tutorials/rock-blaster). Destroy space rocks and protect your ship. Accumulate points to regain health.
 
 ## Controls:
 
@@ -10,5 +10,5 @@ Asteroids type of a game based on the FlatRedBall [tutorial](https://docs.flatre
 ## Screenshots:
 
 <p align="center" style="margin-bottom: 0px !important;">
-  <img width="800" src="/ScreenShots/screenshot.png" alt="Gameplay" align="center">
+  <img width="800" src="/Screenshots/screenshot.png" alt="Gameplay" align="center">
 </p>
