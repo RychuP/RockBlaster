@@ -14,5 +14,5 @@ Rock Blaster is a top-down Asteroids-like game based on a FlatRedBall [tutorial]
 <p align="center" style="margin-bottom: 0px !important;">
   <img width="800" src="/Screenshots/startmenu.png" alt="Start Menu" align="center">
   <br><br>
-  <img width="800" src="/Screenshots/screenshot.png" alt="Gameplay" align="center">
+  <img width="800" src="/Screenshots/gameplay.png" alt="Gameplay" align="center">
 </p>
