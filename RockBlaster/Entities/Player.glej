@@ -29,6 +29,12 @@
       "IsSharedStatic": true,
       "RuntimeType": "Microsoft.Xna.Framework.Audio.SoundEffect",
       "ProjectsToExcludeFrom": []
+    },
+    {
+      "Name": "Entities/Player/invulnerability.png",
+      "IsSharedStatic": true,
+      "RuntimeType": "Microsoft.Xna.Framework.Graphics.Texture2D",
+      "ProjectsToExcludeFrom": []
     }
   ],
   "CustomVariables": [
@@ -124,7 +130,7 @@
         }
       ],
       "Name": "InvulnerabilityTimeAfterDamage",
-      "DefaultValue": 0.0,
+      "DefaultValue": 1.5,
       "SetByDerived": true,
       "Category": "Damageable"
     },
@@ -220,6 +226,66 @@
       "DefaultValue": -86,
       "SetByDerived": true,
       "Summary": "Default Y position for newly created players."
+    },
+    {
+      "Properties": [
+        {
+          "Name": "Type",
+          "Value": "float",
+          "Type": "String"
+        },
+        {
+          "Name": "Category",
+          "Value": "Size",
+          "Type": "String"
+        }
+      ],
+      "Name": "InvSpriteTextureScale",
+      "DefaultValue": 1.0,
+      "SetByDerived": true,
+      "SourceObject": "InvulnerabilitySprite",
+      "SourceObjectProperty": "TextureScale",
+      "Category": "Size"
+    },
+    {
+      "Properties": [
+        {
+          "Name": "Type",
+          "Value": "bool",
+          "Type": "String"
+        },
+        {
+          "Name": "Category",
+          "Value": "Appearance",
+          "Type": "String"
+        }
+      ],
+      "Name": "InvSpriteVisible",
+      "DefaultValue": false,
+      "SetByDerived": true,
+      "SourceObject": "InvulnerabilitySprite",
+      "SourceObjectProperty": "Visible",
+      "Category": "Appearance"
+    },
+    {
+      "Properties": [
+        {
+          "Name": "Type",
+          "Value": "float",
+          "Type": "String"
+        },
+        {
+          "Name": "Category",
+          "Value": "Appearance",
+          "Type": "String"
+        }
+      ],
+      "Name": "InvSpriteAlpha",
+      "DefaultValue": 1.0,
+      "SetByDerived": true,
+      "SourceObject": "InvulnerabilitySprite",
+      "SourceObjectProperty": "Alpha",
+      "Category": "Appearance"
     }
   ],
   "Properties": [
@@ -235,6 +301,41 @@
     }
   ],
   "NamedObjects": [
+    {
+      "InstanceName": "InvulnerabilitySprite",
+      "SourceClassType": "FlatRedBall.Sprite",
+      "Properties": [
+        {
+          "Name": "AssociateWithFactory",
+          "Value": true,
+          "Type": "bool"
+        }
+      ],
+      "InstructionSaves": [
+        {
+          "Type": "float",
+          "Member": "TextureScale",
+          "Value": 1.0,
+          "Time": 0.0
+        },
+        {
+          "Type": "Texture2D",
+          "Member": "Texture",
+          "Value": "invulnerability",
+          "Time": 0.0
+        },
+        {
+          "Type": "bool",
+          "Member": "Visible",
+          "Value": false,
+          "Time": 0.0
+        }
+      ],
+      "SourceType": 2,
+      "SourceFile": "Sprite",
+      "AttachToContainer": true,
+      "GenerateTimedEmit": true
+    },
     {
       "InstanceName": "SpriteInstance",
       "SourceClassType": "FlatRedBall.Sprite",
@@ -338,6 +439,67 @@
       "SourceName": "Entire File (SoundEffectInstance)",
       "AttachToContainer": true,
       "GenerateTimedEmit": true
+    }
+  ],
+  "StateCategoryList": [
+    {
+      "Name": "Invulnerability",
+      "States": [
+        {
+          "Name": "Hidden",
+          "InstructionSaves": [
+            {
+              "Type": "float",
+              "Member": "InvSpriteTextureScale",
+              "Value": 1.0,
+              "Time": 0.0
+            },
+            {
+              "Type": "float",
+              "Member": "InvSpriteAlpha",
+              "Value": 0.0,
+              "Time": 0.0
+            }
+          ]
+        },
+        {
+          "Name": "Visible",
+          "InstructionSaves": [
+            {
+              "Type": "float",
+              "Member": "InvSpriteTextureScale",
+              "Value": 1.5,
+              "Time": 0.0
+            },
+            {
+              "Type": "bool",
+              "Member": "InvSpriteVisible",
+              "Value": true,
+              "Time": 0.0
+            }
+          ]
+        }
+      ],
+      "ExcludedVariables": [
+        "X",
+        "Y",
+        "Z",
+        "TeamIndex",
+        "MaxHealth",
+        "InvulnerabilityTimeAfterDamage",
+        "MovementSpeed",
+        "TurningSpeed",
+        "StartingHealth",
+        "CircleInstanceRadius",
+        "TimeBetweenShots",
+        "Drag",
+        "StartY",
+        "InvulnerabilitySpriteBlue",
+        "InvulnerabilitySpriteRed",
+        "InvulnerabilitySpriteVisible",
+        "InvSpriteRed",
+        "InvulnerabilitySpriteAlpha"
+      ]
     }
   ],
   "Name": "Entities\\Player",

@@ -29,9 +29,9 @@ public partial class RockSpawner
         private set
         {
             if (_difficulty == value) return;
-            if (value < InitialRocksPerSecond)
+            if (value < InitialDifficulty)
                 throw new ArgumentException("Difficulty cannot fall below the base value.");
-            if (value < _difficulty && value != InitialRocksPerSecond)
+            if (value < _difficulty && value != InitialDifficulty)
                 throw new ArgumentException("Reduction of difficulty is not allowed (unless 0).");
             _difficulty = value;
             OnDifficultyChanged();
@@ -201,9 +201,17 @@ public partial class RockSpawner
         return TimeManager.CurrentScreenSecondsSince(_lastSpawnTime) > spawnFrequency;
     }
 
+    public void SetInitialDifficulty(float difficulty)
+    {
+        if (!_isStopped)
+            throw new InvalidOperationException("Changing initial difficulty is not allowed during gameplay.");
+
+        Difficulty = InitialDifficulty = difficulty;
+    }
+
     public void ResetDifficulty()
     {
-        Difficulty = InitialRocksPerSecond;
+        Difficulty = InitialDifficulty;
     }
 
     void IncreaseDifficulty()

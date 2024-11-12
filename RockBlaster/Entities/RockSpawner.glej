@@ -47,9 +47,10 @@
           "Type": "String"
         }
       ],
-      "Name": "InitialRocksPerSecond",
+      "Name": "InitialDifficulty",
       "DefaultValue": 0.4,
-      "SetByDerived": true
+      "SetByDerived": true,
+      "Summary": "Initial rate of spawning rocks per second"
     },
     {
       "Properties": [
@@ -86,6 +87,32 @@
       "Name": "MaxVelocity",
       "DefaultValue": 80.0,
       "SetByDerived": true
+    },
+    {
+      "Properties": [
+        {
+          "Name": "Type",
+          "Value": "float",
+          "Type": "String"
+        }
+      ],
+      "Name": "MinDifficulty",
+      "DefaultValue": 0.4,
+      "SetByDerived": true,
+      "Summary": "Minimum initial rate of spawning rocks per second"
+    },
+    {
+      "Properties": [
+        {
+          "Name": "Type",
+          "Value": "float",
+          "Type": "String"
+        }
+      ],
+      "Name": "MaxDifficulty",
+      "DefaultValue": 6.0,
+      "SetByDerived": true,
+      "Summary": "Maximum initial rate of spawning rocks per second"
     }
   ],
   "Name": "Entities\\RockSpawner",

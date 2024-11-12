@@ -32,6 +32,32 @@
       "Properties": [
         {
           "Name": "Type",
+          "Value": "int",
+          "Type": "String"
+        }
+      ],
+      "Name": "MinBaseHealingRate",
+      "DefaultValue": 500,
+      "SetByDerived": true,
+      "DefinedByBase": true
+    },
+    {
+      "Properties": [
+        {
+          "Name": "Type",
+          "Value": "int",
+          "Type": "String"
+        }
+      ],
+      "Name": "MaxBaseHealingRate",
+      "DefaultValue": 2500,
+      "SetByDerived": true,
+      "DefinedByBase": true
+    },
+    {
+      "Properties": [
+        {
+          "Name": "Type",
           "Value": "string",
           "Type": "String"
         },

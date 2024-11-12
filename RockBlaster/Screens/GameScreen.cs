@@ -81,6 +81,7 @@ public partial class GameScreen
         SetStartValues();
         ShowRockValuesInStartMenu();
         UpdateHealingValueText();
+        UpdateDifficultyValueText();
         StartMenu.Visible = true;
     }
 
@@ -152,6 +153,11 @@ public partial class GameScreen
     void UpdateHealingValueText()
     {
         GumScreen.HealingValueText = BaseHealingScore.ToString();
+    }
+
+    void UpdateDifficultyValueText()
+    {
+        GumScreen.DifficultyValueText = $"{RockSpawner.InitialDifficulty:0.00}";
     }
 
     void SetStartValues()

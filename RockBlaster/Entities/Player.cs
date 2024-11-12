@@ -10,6 +10,7 @@ using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using System.Diagnostics;
 
 namespace RockBlaster.Entities;
 
@@ -25,9 +26,13 @@ public partial class Player
     // bullet delay
     double _lastShotTime;
 
+    // time when the invulnerability ends
+    double _invulnerabilityStartTime;
+
     // keep on shooting when true
     bool _autoFire;
 
+    // entity can turn and shoot but does not move forward
     bool _isStopped = true;
 
     public I1DInput TurningInput { get; set; }
@@ -64,6 +69,7 @@ public partial class Player
     {
         MovementActivity();
         ShootingActivity();
+        InvulnerabilityActivity();
     }
 
     private void CustomDestroy()
@@ -116,6 +122,21 @@ public partial class Player
         _lastShotTime = TimeManager.CurrentScreenTime;
     }
 
+    void InvulnerabilityActivity()
+    {
+        var elapsed = TimeManager.CurrentScreenSecondsSince(_invulnerabilityStartTime);
+        if (elapsed > InvulnerabilityTimeAfterDamage)
+        {
+            StopInvulnerability();
+        }
+        else
+        {
+            FlatRedBall.Debugging.Debugger.TextCorner = FlatRedBall.Debugging.Debugger.Corner.BottomLeft;
+            FlatRedBall.Debugging.Debugger.Write($"Scale: {InvSpriteTextureScale:0.00}, " +
+                $"Alpha: {InvSpriteAlpha:0.00}, Visible: {InvSpriteVisible}");
+        }
+    }
+
     void FireBullet(Vector3 offset)
     {
         Bullet bullet = Factories.BulletFactory.CreateNew();
@@ -142,6 +163,20 @@ public partial class Player
         Y = StartY;
     }
 
+    public void StartInvulnerability()
+    {
+        _invulnerabilityStartTime = TimeManager.CurrentScreenTime;
+        IsDamageReceivingEnabled = false;
+        CurrentInvulnerabilityState = Invulnerability.Visible;
+        InterpolateToState(Invulnerability.Hidden, InvulnerabilityTimeAfterDamage);
+    }
+
+    void StopInvulnerability()
+    {
+        IsDamageReceivingEnabled = true;
+        StopStateInterpolation(Invulnerability.Hidden);
+    }
+
     void OnHealthChanged(int prevHealth, int newHealth)
     {
         if (newHealth < prevHealth)
@@ -149,6 +184,8 @@ public partial class Player
             HitSound.Play();
             if (_health <= 0)
                 Destroy();
+            else
+                StartInvulnerability();
         }
         else if (newHealth == prevHealth + 1) 
         {

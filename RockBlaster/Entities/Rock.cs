@@ -49,11 +49,6 @@ public partial class Rock
         {
             BreakIntoPieces(RockSize.Size2);
         }
-        //else if (CurrentRockSizeState == RockSize.Size2)
-        //{
-        //    BreakIntoPieces(RockSize.Size1);
-        //}
-        // don't break into pieces if at size 1
 
         SmashSound.Play();
         Destroy();
