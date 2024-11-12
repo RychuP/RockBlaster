@@ -983,8 +983,8 @@ healing rate.</Value>
     <Variable>
       <Type>string</Type>
       <Name>Healing Description.Text</Name>
-      <Value xsi:type="xsd:string">Regain 1 point 
-of ship health every </Value>
+      <Value xsi:type="xsd:string">Regain 1 point of
+ship health every </Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

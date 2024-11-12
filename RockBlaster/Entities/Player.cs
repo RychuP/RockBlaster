@@ -26,7 +26,7 @@ public partial class Player
     // bullet delay
     double _lastShotTime;
 
-    // time when the invulnerability ends
+    // time when the invulnerability starts
     double _invulnerabilityStartTime;
 
     // keep on shooting when true
@@ -124,12 +124,10 @@ public partial class Player
 
     void InvulnerabilityActivity()
     {
+        if (IsDamageReceivingEnabled == true) return;
+
         var elapsed = TimeManager.CurrentScreenSecondsSince(_invulnerabilityStartTime);
-        if (elapsed > InvulnerabilityTimeAfterDamage)
-        {
-            StopInvulnerability();
-        }
-        else
+        if (elapsed < InvulnerabilityTimeAfterDamage)
         {
             FlatRedBall.Debugging.Debugger.TextCorner = FlatRedBall.Debugging.Debugger.Corner.BottomLeft;
             FlatRedBall.Debugging.Debugger.Write($"Scale: {InvSpriteTextureScale:0.00}, " +
@@ -166,15 +164,25 @@ public partial class Player
     public void StartInvulnerability()
     {
         _invulnerabilityStartTime = TimeManager.CurrentScreenTime;
+
+        // disable damage receiving
         IsDamageReceivingEnabled = false;
+
+        // create a start instruction
         CurrentInvulnerabilityState = Invulnerability.Visible;
-        InterpolateToState(Invulnerability.Hidden, InvulnerabilityTimeAfterDamage);
+        var startInstr = InterpolateToState(Invulnerability.Hidden, InvulnerabilityTimeAfterDamage);
+
+        // create a stop instruction
+        var stopInstr = new DelegateInstruction(StopInvulnerability)
+        {
+            TimeToExecute = startInstr.TimeToExecute
+        };
+        Instructions.Add(stopInstr);
     }
 
     void StopInvulnerability()
     {
         IsDamageReceivingEnabled = true;
-        StopStateInterpolation(Invulnerability.Hidden);
     }
 
     void OnHealthChanged(int prevHealth, int newHealth)
